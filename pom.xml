@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>fr.cci.formationcciobject.java</groupId>
+  <artifactId>Patisserie</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Patisserie</name>
+  <description>Mon premier projet maven  javaEE</description>
+  
+  
+  <parent>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-starter-parent</artifactId>
+       <version>2.1.1.RELEASE</version>
+   </parent>
+
+
+   <properties>
+           <java.version>1.8</java.version>
+           <jetty-version>9.4.6.v20170531</jetty-version>
+           <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+   </properties>
+
+   <dependencies>
+       <dependency>
+           <groupId>javax.servlet</groupId>
+           <artifactId>javax.servlet-api</artifactId>
+           <version>3.1.0</version>
+       </dependency>
+
+       <dependency>
+           <groupId>org.eclipse.jetty</groupId>
+           <artifactId>jetty-webapp</artifactId>
+           <version>${jetty-version}</version>
+       </dependency>
+       <dependency>
+           <groupId>org.eclipse.jetty</groupId>
+           <artifactId>jetty-annotations</artifactId>
+           <version>${jetty-version}</version>
+       </dependency>
+   </dependencies>
+
+
+   <build>
+       <plugins>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-compiler-plugin</artifactId>
+               <configuration>
+                   <source>${java.version}</source>
+                   <target>${java.version}</target>
+               </configuration>
+               <version>3.7.0</version>
+           </plugin>
+           <plugin>
+               <groupId>org.eclipse.jetty</groupId>
+               <artifactId>jetty-maven-plugin</artifactId>
+               <version>${jetty-version}</version>
+               <configuration>
+                   <scanIntervalSeconds>1</scanIntervalSeconds>
+                  
+               </configuration>
+           </plugin>
+       </plugins>
+   </build>
+  
+  
+</project>
